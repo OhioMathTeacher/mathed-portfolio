@@ -1,0 +1,135 @@
+<title>Jordan Ellis Teaching Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+  :root{--bg:#FFFFFF; --bg2:#F5F3FB; --ink:#2A2540; --ink2:#5F6368; --ink3:#80868B; --line:#E2DDF0; --accent:#6B4FBB; --accent-ink:#FFFFFF; --accent-soft:#ECE6FA; --embed:#F5F3FB; --link:#5A3FA8; --yellow:#FEF7E0; --r:14px; --head:"Quicksand","Trebuchet MS",sans-serif; --body:"Nunito","Helvetica Neue",Arial,sans-serif}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--bg:#1C1D20; --bg2:#26282C; --ink:#E8EAED; --ink2:#BDC1C6; --ink3:#9AA0A6; --line:#3C4043; --accent:#B39DF0; --accent-ink:#1C1D20; --accent-soft:#33285A; --embed:#2E3034; --link:#8AB4F8; --yellow:#3A3320} }
+  :root[data-theme="dark"]{--bg:#1C1D20; --bg2:#26282C; --ink:#E8EAED; --ink2:#BDC1C6; --ink3:#9AA0A6; --line:#3C4043; --accent:#B39DF0; --accent-ink:#1C1D20; --accent-soft:#33285A; --embed:#2E3034; --link:#8AB4F8; --yellow:#3A3320}
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.6}
+  h1,h2,h3,.gbar .site,.banner h1{font-family:var(--head)}
+  a{color:var(--link)} p{margin:0 0 12px} ul{margin:0 0 12px; padding-left:22px} li{margin-bottom:4px}
+  h1,h2,h3,h4{font-weight:500; margin:0; line-height:1.25} h2{font-size:28px; margin-bottom:6px} h3{font-size:20px; margin:26px 0 8px} h4{font-size:15px; color:var(--ink2); text-transform:uppercase; letter-spacing:.06em; margin:18px 0 6px}
+  .sample{background:var(--yellow); color:var(--ink); font-size:13px; padding:8px 20px; text-align:center; border-bottom:1px solid var(--line)}
+  .sample a{color:inherit}
+  .gbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 24px; border-bottom:1px solid var(--line); background:var(--bg); position:sticky; top:0; z-index:5; flex-wrap:wrap}
+  .gbar .site{font-size:20px; font-weight:500}
+  .gbar nav{display:flex; gap:4px; flex-wrap:wrap}
+  .gbar nav a{color:var(--ink2); text-decoration:none; padding:8px 12px; border-radius:calc(var(--r)/2); font-size:14px; font-weight:500}
+  .gbar nav a:hover{background:var(--bg2)} .gbar nav a.on{color:var(--accent); box-shadow:inset 0 -2px 0 var(--accent); border-radius:0}
+  .gbar nav a{font-family:var(--head); font-weight:700; border-radius:20px} .gbar nav a.on{background:var(--accent-soft); box-shadow:none; border-radius:20px}
+  .banner{background:var(--accent); color:#fff; padding:56px 24px; text-align:center; background:#6B4FBB; background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px); background-size:24px 24px; padding:64px 24px}
+  .banner h1{font-size:40px; font-weight:400} .banner p{font-size:17px; opacity:.9; margin:8px 0 0}
+  .banner h1{font-weight:700; font-size:44px} .banner p{background:#7EE0B8; color:#2A2540; display:inline-block; padding:4px 14px; border-radius:20px; font-weight:700; font-size:14px; margin-top:14px; opacity:1} h2{font-weight:700} h3{font-weight:700} .card,.v,.empty{border-width:2px} .empty{border-color:#7EE0B8; background:#F1FBF6; color:#2A2540} .tag{background:#7EE0B8; color:#2A2540} .goal .b{border-radius:50%} .sample{background:#F1FBF6}
+  main{max-width:860px; margin:0 auto; padding:36px 24px 80px}
+  .page{display:none} .page.on{display:block}
+  .sub{display:flex; gap:8px; flex-wrap:wrap; margin:4px 0 24px; padding-bottom:16px; border-bottom:1px solid var(--line)}
+  .sub a{font-size:13px; padding:5px 12px; border:1px solid var(--line); border-radius:16px; text-decoration:none; color:var(--ink2)} .sub a.on{background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600}
+  .lead{color:var(--ink2); font-size:17px; margin-bottom:20px}
+  .embed{background:var(--embed); border:1px solid var(--line); border-radius:var(--r); padding:16px 18px; display:flex; gap:14px; align-items:center; margin:12px 0 18px}
+  .embed .ico{width:40px; height:48px; border-radius:calc(var(--r)/2); background:var(--bg); border:1px solid var(--line); display:grid; place-items:center; font-size:11px; font-weight:700; color:var(--accent); flex:none}
+  .embed .nm{font-weight:500} .embed .meta{font-size:13px; color:var(--ink3)}
+  .video{background:#111; color:#ddd; border-radius:var(--r); aspect-ratio:16/9; display:grid; place-items:center; margin:12px 0 18px; font-size:14px; position:relative}
+  .video::before{content:"▶"; font-size:44px; color:#fff; opacity:.85; position:absolute}
+  .video span{position:absolute; bottom:12px; left:14px; font-size:12px; opacity:.8}
+  .card{border:1px solid var(--line); border-radius:var(--r); padding:18px 20px; margin:12px 0}
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:16px} @media(max-width:700px){.two{grid-template-columns:1fr}}
+  .v{border:1px solid var(--line); border-radius:var(--r); padding:16px 18px; background:var(--bg2)} .v h4{margin-top:0}
+  .cm{display:grid; grid-template-columns:36px 1fr; gap:12px; padding:12px 0; border-top:1px solid var(--line)}
+  .cm .av{width:36px; height:36px; border-radius:50%; display:grid; place-items:center; font-size:13px; font-weight:600; color:#fff; background:var(--ink3)}
+  .cm.me .av{background:var(--accent); color:var(--accent-ink)} .cm .who{font-size:13px; color:var(--ink2); margin-bottom:2px} .cm .who b{color:var(--ink); font-weight:500} .cm p{margin:0}
+  .cm.me{padding-left:24px}
+  .tag{display:inline-block; font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:2px 8px; border-radius:10px; background:var(--accent-soft); color:var(--accent); margin-left:8px; vertical-align:middle}
+  .mile{background:var(--bg2); border-left:4px solid var(--accent); padding:12px 16px; border-radius:0 6px 6px 0; margin:12px 0 18px; font-size:15px}
+  table{border-collapse:collapse; width:100%; font-size:14.5px; margin:8px 0 16px} th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top} th{color:var(--ink2); font-weight:500}
+  .work{background:var(--bg2); border:1px dashed var(--line); border-radius:var(--r); padding:12px 14px; font-family:"Comic Sans MS","Chalkboard SE",cursive; font-size:14.5px; color:var(--ink); margin:8px 0}
+  .math{font-family:"STIX Two Text","Times New Roman",serif; font-size:17px}
+  .ref{color:var(--link); text-decoration:underline dotted; cursor:pointer}
+  .goal{display:grid; grid-template-columns:24px 1fr; gap:10px; margin:6px 0} .goal .b{width:20px; height:20px; border:2px solid var(--ink3); border-radius:3px; display:grid; place-items:center; font-size:13px; color:var(--accent)}
+  .ts{font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--accent); margin-right:8px}
+  .empty{border:2px dashed var(--line); border-radius:var(--r); padding:28px; text-align:center; color:var(--ink3); margin:16px 0}
+  footer{border-top:1px solid var(--line); padding:20px 24px; font-size:13px; color:var(--ink3); text-align:center}
+</style>
+<div class="sample">Sample portfolio · Jordan Ellis is a fictional student · Miami University Mathematics Education · <a href="../index.html">← Back to the program site</a></div>
+<div class="gbar"><div class="site">Jordan Ellis</div><nav><a href="#home" data-group="home">About Me</a><a href="#mile" data-group="mile">MILE Portfolio</a><a href="#med-letters" data-group="med">Math Ed Portfolio</a><a href="#concl" data-group="concl">Concluding Reflection</a></nav></div>
+<div class="banner"><h1>Jordan Ellis</h1><p>Teaching Portfolio · Mathematics Education · Miami University · 2025– (in progress)</p></div>
+<main><div class="page" id="home" data-group="home"><h2>About Me</h2><p class="lead">Sophomore · Adolescent/Young Adult Integrated Mathematics · Class of 2029 · Last updated October 2026</p>
+<p>I'm from Columbus, and I'm the first person in my family to go to college. I picked math education because my high-school geometry teacher, Mr. Abara, made proofs feel like a game, and I want to do that for someone else. I'm also on the club ultimate team, which is where most of my Sundays go.</p>
+<p>This site is a year and a half old. I made it in UNV 101 in August 2025 with two pages and an About Me that I have already rewritten twice. Right now the Year 1 page is done, Year 2 is half-built, and Years 3 and 4 are empty on purpose — my mentor said leave the placeholders up so I can see what's coming. Reading Priya's finished site in a Methods I workshop is what made me realize mine was going to look like that eventually, and also that mine currently doesn't.</p>
+<div class="mile"><b>MILE note.</b> One ASC artifact is in (Quantitative Reasoning, from MTH 231). Advanced Writing, two more ASCs, and Capstone are still to come. Concluding Reflection: senior year.</div></div><div class="page" id="mile" data-group="mile"><h2>MILE Portfolio</h2><p class="lead">Started in UNV 101, August 2025 · in progress</p>
+<table><tr><th>Requirement</th><th>Artifact</th><th>Course</th><th>Status</th></tr>
+<tr><td>About Me</td><td>About Me page</td><td>UNV 101</td><td>Done (revised twice)</td></tr>
+<tr><td>ASC · Quantitative reasoning</td><td>Sum of the first n odd numbers is n², three ways</td><td>MTH 231</td><td>Done · S26</td></tr>
+<tr><td>ASC · Oral communication</td><td>Lesson plan, taught — planned for EDT 313</td><td>EDT 313 Methods I</td><td>In progress · F26</td></tr>
+<tr><td>ASC · (third)</td><td>—</td><td>TBD</td><td>Year 3</td></tr>
+<tr><td>Advanced Writing</td><td>Teaching philosophy v3</td><td>EDT 401W</td><td>Year 3</td></tr>
+<tr><td>Capstone</td><td>—</td><td>EDT 419</td><td>Year 4</td></tr>
+<tr><td>Concluding reflection</td><td>—</td><td>EDT 419</td><td>Year 4</td></tr></table>
+<h3>Sum of the first n odd numbers is n², three ways<span class="tag">MILE · ASC Quantitative Reasoning</span></h3>
+<h4>Artifact</h4><div class="embed"><div class="ico">PDF</div><div><div class="nm">Ellis_MTH231_OddNumbers_ThreeWays.pdf</div><div class="meta">Google Drive · 4 pages · MTH 231, March 2026</div></div></div>
+<div class="card math">1 + 3 + 5 + ⋯ + (2n−1) = n².&nbsp; By induction (p. 1). By the L-shaped picture — each odd number is an L wrapped around an (n−1)×(n−1) square (p. 2). By pairing terms from the outside in (p. 3).</div>
+<h4>Reflection</h4>
+<p><b>Process.</b> The assignment was one proof. I did the induction, got it, and felt nothing. Then I drew the squares and actually laughed. I asked Dr. Okafor if I could turn in all three and reflect on which one I'd show a ninth grader. Page 4: the picture, obviously, and then I'd ask them to find the induction in it.</p>
+<p><b>Outcomes.</b> I can prove this three ways. The thing I learned isn't the theorem — it's that the proof I'd teach and the proof I was asked for are different, and I should know both.</p>
+<p><b>Integration.</b> Mr. Abara used to say "a proof you can't draw is a proof you don't own yet." I put that in Letter 1 without knowing why. Now it's on this page with evidence.</p>
+<h4>Feedback &amp; reply</h4><div class="cm"><div class="av">DO</div><div><div class="who"><b>Dr. Okafor</b> · faculty mentor · Apr 3, 2026</div><p>Which of the three would a student who hates proofs believe? Not 'understand' — believe.</p></div></div><div class="cm me"><div class="av">JE</div><div><div class="who"><b>Jordan Ellis</b> · student · Apr 6, 2026</div><p>The picture. And that bothers me, because it's the least rigorous. I don't know what to do with that yet.</p></div></div><div class="cm"><div class="av">DO</div><div><div class="who"><b>Dr. Okafor</b> · faculty mentor · Apr 7, 2026</div><p>Good. Leave it on the page. Come back to it in Methods.</p></div></div>
+<h4>Next step</h4><p>Methods I, fall 2026: plan a lesson where the picture comes first and the rigor second, and see if it holds up with real ninth graders.</p></div><div class="page" id="med-letters" data-group="med"><h2>Letters &amp; goals</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><p class="lead">One letter each fall. Letter 2 grades the goals in Letter 1.</p>
+<h3>Letter 1 · September 2025 (UNV 101)</h3>
+<div class="card"><p>Dear Jordan next fall,</p><p>You are a first-gen freshman who picked this major because of one teacher, and you're a little worried that isn't enough of a reason. You want to make proofs feel like a game. You don't know what a lesson plan looks like. You're most looking forward to the first time you're in front of a class and most worried about the first time a kid is smarter than you.</p>
+<p>Mr. Abara said "a proof you can't draw is a proof you don't own yet." Write that down somewhere.</p>
+<p>Goals: (1) Pass MTH 151 and MTH 231 with B or better. (2) Go to one Howe Center workshop on this portfolio thing. (3) Find out what a lesson plan looks like.</p></div>
+<h3>Letter 2 · September 2026</h3>
+<div class="card"><div class="goal"><span class="b">✓</span><span>151: B+. 231: A. The A is the odd-numbers proof.</span></div><div class="goal"><span class="b">✓</span><span>Went to two. The second one showed a senior's site (Priya's) and I went home and rebuilt mine.</span></div><div class="goal"><span class="b">✓</span><span>Saw one in a Methods I preview. It has a table of what students will say wrong. I did not know that was a thing.</span></div>
+<p style="margin-top:12px">What I got wrong a year ago: "a kid smarter than me" is not the thing to worry about. The odd-numbers page taught me that the proof I'd show a kid isn't the one I'd show a professor, and I'm not sure yet which one is smarter.</p>
+<p>Goals: (1) Teach one lesson in EDT 313 with the picture first. (2) Write the wrong-answers table before the lesson, not after. (3) Reply to feedback within a week — right now I'm at about two.</p></div>
+<div class="empty">Letter 3 · September 2027 — not yet written</div>
+<div class="empty">Letter 4 · September 2028 — not yet written</div></div><div class="page" id="med-phil" data-group="med"><h2>Teaching philosophy</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><p class="lead">Two versions so far. Both kept.</p>
+<div class="two">
+<div class="v"><h4>v1 · Fall 2025</h4><p>I believe math should feel like a game — the way Mr. Abara taught proofs. Students learn when they're curious, and the teacher's job is to make them curious and then explain things clearly so the curiosity pays off. I want every student to have the moment I had in geometry.</p></div>
+<div class="v"><h4>v2 · Fall 2026</h4><p>A proof you can't draw is a proof you don't own yet, and I think that's true for most of mathematics. Students learn when they have a picture before they have the rule. My job is to find the picture (<a data-go href="#mile">odd numbers, p. 2</a>), put it first, and then make them find the rule in it. I'm less sure than I was that "explain clearly" is the job. Dr. Okafor's question — which proof would a student <i>believe</i> — is the one I'm carrying into Methods.</p><p><i>What changed since v1:</i> "make them curious" got replaced by "give them the picture," which is a thing I can actually plan.</p></div></div>
+<div class="empty">v3 · Fall 2027 (Advanced Writing) — not yet written</div>
+<div class="empty">v4 · Spring 2029 — not yet written</div></div><div class="page" id="med-y1" data-group="med"><h2>Year 1 · Begin the record</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><p class="lead">2025–26 · UNV 101, MTH 151, MTH 231, EDT 190 · Complete</p>
+<ul><li><a data-go href="#mile">Sum of the first n odd numbers, three ways</a> — MILE ASC artifact, with the "believe" question I'm still carrying.</li>
+<li><b>Observation notes · Talawanda High School, Mr. Fields, Geometry · April 2026</b><br><div class="embed"><div class="ico">DOC</div><div><div class="nm">Ellis_Observation_Fields_Apr2026.gdoc</div><div class="meta">Google Docs · 2 pages</div></div></div>
+<p>One visit, 50 minutes. He put a diagram on the board with no words and waited. It took a student almost a minute to say "is that supposed to be congruent?" and then the whole lesson came out of that question. I timed the wait: 52 seconds. I could not have done that. I don't know if I'll be able to.</p></li></ul>
+<h3>Muddiest point · Year 1</h3><p>"How do you know which picture to put first?"</p>
+<h3>Goal check-in</h3><p>See <a data-go href="#med-letters">Letter 2</a>. All three met, one of them by accident.</p></div><div class="page" id="med-y2" data-group="med"><h2>Year 2 · First classroom evidence (in progress)</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><p class="lead">2026–27 · EDT 313 Methods I (fall), EDT 190 field experience · Placement: Talawanda High School, Geometry · <b>In progress — last updated October 14, 2026</b></p>
+<h3>Lesson plan (draft 2 of ?) · Triangle inequality, grade 9<span class="tag">MILE · ASC Oral Communication · planned</span></h3>
+<h4>Artifact</h4><div class="embed"><div class="ico">DOC</div><div><div class="nm">Ellis_LessonPlan_TriangleInequality_draft2.gdoc</div><div class="meta">Google Docs · draft · to be taught November 2026</div></div></div>
+<h4>Context</h4><p>Methods I requires one lesson taught in placement. Mr. Fields offered period 5. Task: students get straws cut to 3, 5, 9 cm and try to make a triangle — they can't — and then figure out the rule. Picture first, rule second (philosophy v2, on purpose).</p>
+<h4>Anticipated responses — draft</h4>
+<table><tr><th>What students might say</th><th>What I'll say</th></tr>
+<tr><td>"It's a triangle if you bend the straw"</td><td>"Can we agree straws stay straight? What if they were metal?"</td></tr>
+<tr><td>"3 + 5 = 8, and 8 &lt; 9, so no" (right, fast)</td><td>"Does 3, 5, 8 work?" — the equality case, which I think is the interesting one</td></tr>
+<tr><td>"The big one has to be less than the other two together"</td><td>"Say that as an inequality"</td></tr>
+<tr><td>?</td><td>Dr. Okafor says there's always a fourth one I haven't thought of. Leaving this row empty until after I teach it.</td></tr></table>
+<h4>Reflection — not yet written</h4><div class="empty">Reflection goes here after November 12. I've already decided the Process paragraph will be about the wait time. Goal: 20 seconds. Mr. Fields did 52.</div>
+<h4>Feedback &amp; reply</h4>
+<div class="cm"><div class="av">DO</div><div><div class="who"><b>Dr. Okafor</b> · EDT 313 instructor · Oct 9, 2026</div><p>Draft 2 is much better than draft 1 — you cut the 6-minute intro to 2. Question: the 3-5-8 case. Do you want students to decide it's a triangle or not, or do you want to tell them? Your plan does both.</p></div></div>
+<div class="cm me"><div class="av">JE</div><div><div class="who"><b>Jordan Ellis</b> · student · Oct 14, 2026</div><p>I want them to decide, and then I want to tell them, which I think means I don't trust them to decide. Working on draft 3. (Five days on this reply — under a week. Goal 3.)</p></div></div>
+<h3>Goal check-in · mid-fall</h3>
+<div class="goal"><span class="b">~</span><span>Picture-first lesson: planned, not yet taught.</span></div>
+<div class="goal"><span class="b">✓</span><span>Wrong-answers table written before the lesson. Three rows and an honest fourth.</span></div>
+<div class="goal"><span class="b">~</span><span>Reply time: 5 days, 6 days, 5 days this semester. Down from two weeks.</span></div>
+<div class="empty">Second Year 2 artifact (observation notes from EDT 190, spring 2027) — not yet added</div></div><div class="page" id="med-y3" data-group="med"><h2>Year 3</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><div class="empty"><p><b>Year 3 · 2027–28 · Not started</b></p><p>Planned: second lesson plan (different grade band) · analysis of student work · an assessment I design · teaching philosophy v3 for EDT 401W (MILE · Advanced Writing) · third ASC artifact.</p><p>Placeholder left up on purpose so I can see what's coming.</p></div></div><div class="page" id="med-y4" data-group="med"><h2>Year 4</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><div class="empty"><p><b>Year 4 · 2028–29 · Not started</b></p><p>Planned: classroom video with commentary (MILE · Capstone) · philosophy v4 beside v1 · growth record · concluding reflection · submit through the MILO form · portfolio presentation.</p></div></div><div class="page" id="med-log" data-group="med"><h2>Feedback log</h2><div class="sub"><a href="#med-letters">Letters &amp; goals</a><a href="#med-phil">Teaching philosophy</a><a href="#med-y1">Year 1</a><a href="#med-y2">Year 2 (in progress)</a><a href="#med-y3">Year 3</a><a href="#med-y4">Year 4</a><a href="#med-log">Feedback log</a></div><p class="lead">Every comment so far, with reply time. Goal: under 7 days. Year 1 average: 11 days. This fall so far: 5.3.</p>
+<table><tr><th>Date</th><th>From</th><th>On</th><th>Reply in</th><th>What I changed</th></tr>
+<tr><td>Oct 2025</td><td>Howe Center workshop</td><td>About Me (first draft)</td><td>16 days</td><td>Rewrote it. Then rewrote it again in Sept 2026.</td></tr>
+<tr><td>Apr 2026</td><td>Dr. Okafor</td><td><a data-go href="#mile">Odd numbers proof</a></td><td>3 days</td><td>Nothing yet. Carrying the question into Methods.</td></tr>
+<tr><td>Sep 2026</td><td>Dr. Okafor</td><td><a data-go href="#med-phil">Philosophy v2</a></td><td>6 days</td><td>Replaced "make them curious" with "give them the picture."</td></tr>
+<tr><td>Oct 2026</td><td>Dr. Okafor</td><td><a data-go href="#med-y2">Lesson plan draft 2</a></td><td>5 days</td><td>Draft 3 in progress: decide, don't tell.</td></tr></table></div><div class="page" id="concl" data-group="concl"><h2>Concluding Reflection</h2><div class="empty"><p><b>Concluding Reflection · Spring 2029 · Not yet written</b></p><p>MILE requires this in Capstone. I'm leaving the page here so the site has the same shape as a finished one. When I write it, I want it to start with the "believe" question from April 2026 and say whether I ever answered it.</p></div></div></main>
+<footer>Shared with faculty mentor; not published · Built with Google Sites (sample rendering)</footer>
+
+<script>
+(function(){
+  const links=[...document.querySelectorAll('.gbar nav a, .sub a, a[data-go]')];
+  function show(id){
+    const target=document.getElementById(id)?id:document.querySelector('.page').id;
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===target));
+    const grp=document.getElementById(target).dataset.group||target;
+    document.querySelectorAll('.gbar nav a').forEach(a=>a.classList.toggle('on',a.dataset.group===grp));
+    document.querySelectorAll('.sub a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+target));
+    window.scrollTo({top:0});
+  }
+  links.forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href'); if(h&&h.startsWith('#')){e.preventDefault(); history.replaceState(null,'','#'+h.slice(1)); show(h.slice(1));}}));
+  show((location.hash||'#home').slice(1));
+})();
+</script>
