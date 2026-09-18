@@ -18,6 +18,7 @@ ARTIFACTS={
   'templates/four-year-build.html':'https://claude.ai/code/artifact/fa41ad12-1e2e-4e5b-bdc1-caaca8ff354d',
   'templates/late-start.html':'https://claude.ai/code/artifact/238bda41-bd6d-4874-9ba0-9e0098110710',
   'templates/course-pilot.html':'https://claude.ai/code/artifact/d9afe63b-eebc-4eec-a2a3-f3f86d63fbad',
+  'implementation.html':'https://claude.ai/code/artifact/b81c1b6c-45ce-405d-a6c9-4bcecf09f364',
 }
 artifacts='--artifacts' in sys.argv
 os.makedirs(os.path.join(DOCS,'samples'),exist_ok=True); os.makedirs(os.path.join(DOCS,'templates'),exist_ok=True)
@@ -32,6 +33,11 @@ html=open(os.path.join(SRC,'index.html')).read()
 if not artifacts:
     for rel,url in ARTIFACTS.items():
         if rel!='index.html': html=html.replace(url, rel)
+else:
+    html=html.replace('href="implementation.html"', f'href="{ARTIFACTS["implementation.html"]}"')
     html=html.replace('PowerPoint versions in Desktop/Portfolio','PowerPoint versions in decks/')
 open(os.path.join(DOCS,'index.html'),'w').write(html)
+impl=open(os.path.join(SRC,'implementation.html')).read()
+if artifacts: impl=impl.replace('href="index.html"', f'href="{ARTIFACTS["index.html"]}"')
+open(os.path.join(DOCS,'implementation.html'),'w').write(impl)
 print('built docs/ with', 'artifact' if artifacts else 'relative', 'links')
